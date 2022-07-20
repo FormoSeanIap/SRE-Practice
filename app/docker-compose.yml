@@ -5,7 +5,7 @@ services:
       - "${DB_PORT}:3306"
     volumes:
       - db-volume:/var/lib/mysql
-      # - ./dump/STYLiSH2_20220713.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./backup.sql:/docker-entrypoint-initdb.d/dump.sql
       #restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
