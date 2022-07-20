@@ -1,0 +1,14 @@
+services:
+  database:
+    image: mysql:8.0
+    ports:
+      - "${DB_PORT}:3306"
+    volumes:
+      - db-volume:/var/lib/mysql
+      # - ./dump/STYLiSH2_20220713.sql:/docker-entrypoint-initdb.d/dump.sql
+      #restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+volumes:
+  db-volume: #driver: local
