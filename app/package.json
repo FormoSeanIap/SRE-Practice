@@ -1,4 +1,9 @@
-{
+{ 
+  "main": "app.js",
+  "scripts": {
+    "test": "set NODE_ENV=test&&mocha --exit",
+    "fakedata": "set NODE_ENV=test&&node test/fake_data_generator.js"
+  },
   "dependencies": {
     "argon2": "^0.28.7",
     "dayjs": "^1.11.4",
@@ -13,6 +18,8 @@
   },
   "devDependencies": {
     "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "deep-equal-in-any-order": "^2.0.0",
     "eslint": "^8.20.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",

@@ -1,14 +1,22 @@
 env:
-  browser: true
-  commonjs: true
-  es2021: true
-  node: true
+    browser: true
+    commonjs: true
+    es2021: true
+    node: true
 extends:
-  - airbnb-base
+    - airbnb-base
 parserOptions:
-  ecmaVersion: latest
+    ecmaVersion: latest
 rules:
-  indent:
-    - error
-    - 4
-  no-console: off
+    indent:
+        - error
+        - 4
+    no-console: off
+    import/no-extraneous-dependencies:
+        - error
+        - devDependencies:
+              - '**/*.test.js'
+              - '**/*.spec.js'
+              - '**/*set_up.js'
+              - '**/*teardown.js'
+              - '**/*_test.js'
