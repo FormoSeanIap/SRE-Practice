@@ -1,22 +1,28 @@
 env:
-    browser: true
-    commonjs: true
-    es2021: true
-    node: true
+  browser: true
+  commonjs: true
+  es2021: true
+  node: true
 extends:
-    - airbnb-base
+  - airbnb-base
 parserOptions:
-    ecmaVersion: latest
+  ecmaVersion: latest
 rules:
-    indent:
-        - error
-        - 4
-    no-console: off
-    import/no-extraneous-dependencies:
-        - error
-        - devDependencies:
-              - '**/*.test.js'
-              - '**/*.spec.js'
-              - '**/*set_up.js'
-              - '**/*teardown.js'
-              - '**/*_test.js'
+  indent:
+    - error
+    - 4
+  no-console: off
+  import/no-extraneous-dependencies:
+    - error
+    - devDependencies:
+        - "**/*.test.js"
+        - "**/*.spec.js"
+        - "**/*set_up.js"
+        - "**/*teardown.js"
+        - "**/*_test.js"
+  # for test files that include 'should' or 'expect'
+  no-unused-expressions:
+    - error
+    - allowShortCircuit: true
+    - allowTernary: true
+    - allowTaggedTemplates: true

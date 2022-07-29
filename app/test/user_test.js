@@ -20,23 +20,23 @@ describe('user APIs', () => {
             password: 'test',
         };
 
-        'test'.should.be.a.string;
-        // const res = await requester.post('/api/1.0/user/signup').send(user);
+        // 'test'.should.be.a.string;
+        const res = await requester.post('/api/1.0/user/signup').send(user);
 
-        // const { status, body } = res;
+        const { status, body } = res;
 
-        // const expectedResponse = {
-        //     data: {
-        //         access_token: body.data.access_token,
-        //         access_expired: expectedExpireTime,
-        //         user: {
-        //             id: 1,
-        //             email: 'test@test.com',
-        //         },
-        //     },
-        // };
+        const expectedResponse = {
+            data: {
+                access_token: body.data.access_token,
+                access_expired: expectedExpireTime,
+                user: {
+                    id: 1,
+                    email: 'test@test.com',
+                },
+            },
+        };
 
-        // status.should.equal(200);
-        // body.should.equal(expectedResponse);
+        status.should.equal(200);
+        body.should.equal(expectedResponse);
     });
 });

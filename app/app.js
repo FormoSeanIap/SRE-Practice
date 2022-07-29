@@ -31,3 +31,5 @@ app.use((err, req, res, next) => {
 });
 
 server.listen(port, () => console.log(`Listening on port ${port} in ${NODE_ENV} mode`));
+
+module.exports = app;
