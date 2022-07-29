@@ -5,7 +5,8 @@ services:
       - "${DB_PORT}:3306"
     volumes:
       - db-volume:/var/lib/mysql
-      - ./backup.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./sre_practice.sql:/docker-entrypoint-initdb.d/sre_practice.sql
+      - ./sre_practice_test.sql:/docker-entrypoint-initdb.d/sre_practice_test.sql
       #restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
