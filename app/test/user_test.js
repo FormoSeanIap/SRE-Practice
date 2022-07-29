@@ -20,7 +20,6 @@ describe('user APIs', () => {
             password: 'test',
         };
 
-        // 'test'.should.be.a.string;
         const res = await requester.post('/api/1.0/user/signup').send(user);
 
         const { status, body } = res;
@@ -30,13 +29,13 @@ describe('user APIs', () => {
                 access_token: body.data.access_token,
                 access_expired: expectedExpireTime,
                 user: {
-                    id: 1,
+                    id: 4,
                     email: 'test@test.com',
                 },
             },
         };
 
         status.should.equal(200);
-        body.should.equal(expectedResponse);
+        body.should.deep.equal(expectedResponse);
     });
 });
